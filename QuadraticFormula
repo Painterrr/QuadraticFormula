@@ -1,0 +1,44 @@
+import java.util.*;
+class QuadraticFormula {
+	public static void main(String[] args) {
+		System.out.println("This is QuadraticFormula.");
+		System.out.println("ax^2 + bx + c = 0");
+		System.out.println("");
+		System.out.println("put values a, b, c");
+		System.out.println("");
+		
+		Scanner in = new Scanner(System.in);
+		System.out.printf("a = ");
+		float a = in.nextFloat();
+		System.out.printf("b = ");
+		float b = in.nextFloat();
+		System.out.printf("c = ");
+		float c = in.nextFloat();
+		
+		double A = (double)a;
+		double B = (double)b;
+		double C = (double)c;
+		
+		System.out.printf("%f, %f, %f%n", A, B, C);
+		
+		double D = Math.pow(b, 2) - (4*a*c);
+		System.out.printf("D= %f%n", D);
+		
+		if(D > 0) {
+			System.out.println("D= b^2-4ac > 0. two values in real number");
+			double x1 = ((-B)+Math.sqrt(Math.pow(B,2)-(A*C))) / (2*A);
+			double x2 = ((-B)-Math.sqrt(Math.pow(B,2)-(A*C))) / (2*A);
+			System.out.printf("x= %f, %f", x1, x2);
+			
+		} else if (D == 0) {
+			System.out.println("D= b^2-4ac = 0. one value in real number");
+			
+			double x0 = ((-B)+Math.sqrt(Math.pow(B,2)-(A*C))) / (2*A);
+			System.out.printf("%f = 0", x0);
+			
+		} else {
+		System.out.printf("D= b^2-4ac < 0. no value in real number");
+		}
+	}
+
+}
